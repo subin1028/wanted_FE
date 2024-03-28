@@ -1,9 +1,16 @@
 import './App.css';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 function App() {
   const [todo, setTodo] = useState("");
   const [divList, setDivlist] = useState([]);
+
+  useEffect(() => {
+    const savedTodos = localStorage.getItem('todos');
+    if (savedTodos) {
+      setDivlist(JSON.parse(savedTodos));
+    }
+  }, []);
 
   const writeSome = (event) => {
     setTodo(event.target.value);
@@ -11,13 +18,17 @@ function App() {
   
   const addTodo = () => {
     if (todo !== ""){
-      setDivlist(prev => [...prev, todo]);
+      const updatedList = [...divList, todo];
+      setDivlist(updatedList);
+      localStorage.setItem('todos', JSON.stringify(updatedList));
       setTodo('');
     }
   };
 
   const removeTodo = (r_index) => {
-    setDivlist(prev => prev.filter((_, index) => index !== r_index));
+    const updatedList = divList.filter((_, index) => index !== r_index);
+    setDivlist(updatedList);
+    localStorage.setItem('todos', JSON.stringify(updatedList));
   };
 
   return (
