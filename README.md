@@ -1,2 +1,2 @@
-# -wanted-_FE
+# wanted_FE
 FE preonboarding
