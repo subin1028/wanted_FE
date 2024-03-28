@@ -1,0 +1,42 @@
+ul{
+    list-style-type: none;
+}
+
+h3 {
+    width: 30vw;
+    text-align: center;
+}
+
+#form_todo {
+    display: flex;
+    flex-direction: row;
+}
+
+#list_todo {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+}
+
+#form_submit{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.box_todo { 
+    border: 1px solid;
+    margin: 0 2vw 2vh 0;
+    text-align: center;
+    padding: 10px;
+}
+
+.no_div {
+    display: none;
+}
+
+.center {
+    text-align: center;
+    padding: 10px;
+}
