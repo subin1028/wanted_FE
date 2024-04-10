@@ -1,0 +1,65 @@
+.App {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 5vw;
+}
+
+.up-box {
+  border: 1px solid #b7b1b1;
+  border-radius: 5px;
+  width: 95%;
+}
+
+#title {
+  color: rgb(115, 83, 234);
+  text-align: center;
+}
+
+.hr {
+  width: 85%;
+  border-style: dashed;
+  color: #b7b1b1;
+  margin: 3vh auto;
+}
+
+.ip-btn{
+  border: 1px solid #b7b1b1;
+  border-radius: 5px;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  padding: 2vh 0;
+  margin: 2vh auto;
+}
+
+.ip-btn input{
+  margin-right: 10px;
+}
+
+.todo {
+  height: 60vh;
+}
+
+.box_todo{
+  background-color: aliceblue;
+  width: 75%;
+  height: 6vh;
+  margin: 1.5vh auto;
+  line-height: 6vh;
+  padding: 0 3.5vw;
+}
+
+.link{
+  text-decoration: none;
+  color: black;
+}
+
+.high {
+  height: 80vh;
+}
+
+.detail{
+  margin: auto;
+  width: 80%;
+}
