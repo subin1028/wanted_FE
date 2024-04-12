@@ -15,17 +15,11 @@ const instance = axios.create({
     auth: `Bearer ${APIKEY}` //제출 시 제거
 });
 
-instance.interceptors.response.use((config) => {
-    console.log(config);
-    return config;
-})
-
 export const callApi = async() => {
     try{
-      instance.get(`${queryParam.organ}/${queryParam.repo}/issues?sort=${queryParam.sort}`);
+      const response = await instance.get(`${queryParam.organ}/${queryParam.repo}/issues?sort=${queryParam.sort}`);
+      return await(response).data?[response.data] : [];
     }catch(e){
-      console.log("에러", e)
-    }finally{
-      console.log("무조건 실행")
+      console.log("error >> ", e)
     }
   }
