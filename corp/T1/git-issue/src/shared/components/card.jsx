@@ -1,35 +1,65 @@
 import styled from 'styled-components';
 
 //이슈번호, 이슈제목, 작성자, 작성일, 코멘트수
-const Card = (props) => {
+const Card = ({iss_num, iss_title, writer, iss_date, num_coment}) => {
     return(
         <>
-            <bigCard>
-                <columnInner>
-                    <div>
-                        <p></p>
-                        <p></p>
-                    </div>
-                    <div>
-                        <p></p>
-                        <p></p>
-                    </div>
-                </columnInner>
-                <div>코멘트</div>
-            </bigCard>
+            <Bigcard>
+                <Columninner>
+                    <Detailinner>
+                        <Nump>#{iss_num}</Nump>
+                        <DetailP>{iss_title}</DetailP>
+                    </Detailinner>
+                    <Detailinner>
+                        <Nump>작성자: {writer} </Nump>
+                        <DetailP>작성일: {iss_date}</DetailP>
+                    </Detailinner>
+                </Columninner>
+                <CommnetBox>코멘트: {num_coment}</CommnetBox>
+            </Bigcard>
         </>
     )
 
 };
 
-const bigCard = styled.div`
-    height: 20vh;
-    width: 80vw;
+const Bigcard = styled.div`
+    display:flex;
+    flex-direction: row;
+    height: 15vh;
+    border-bottom: 1px solid black;
+    align-items: center;
 `;
 
-const columnInner = styled.div`
+const Columninner = styled.div`
     display: flex;
     flex-direction: column;
+    width: 73%;
+    font-size: 1.4vmax;
+    margin: auto 0;
+`;
+
+const Detailinner = styled.div`
+    display:flex;
+    flex-direction: row;
+    margin: auto 0;
+`;
+
+const DetailP = styled.p`
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+`;
+
+const Nump = styled.p`
+    margin-right: 2vw;
+    white-space: nowrap
+`;
+
+const CommnetBox = styled.div`
+    display: flex;
+    align-items: center;
+    font-size: 1.5vmax;
+    margin: auto;
 `;
 
 

@@ -21,6 +21,7 @@ const HeaderDiv = styled.div`
     position: fixed;
     font-size: 3vh;
     margin-bottom: 2vh;
+    background-color: white;
 `;
 
 export default Headers;
