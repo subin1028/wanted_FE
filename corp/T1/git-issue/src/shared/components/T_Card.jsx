@@ -53,7 +53,7 @@ const Outerdetail = styled.div`
 `;
 
 const Adcard = styled.img`
-    height: 13vh;
+    height: 15vh;
     overflow: hidden;
     width: 90vw;
     object-fit: cover;

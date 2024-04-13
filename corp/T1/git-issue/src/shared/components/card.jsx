@@ -40,7 +40,7 @@ function DateFormatter(origin_date){
 const Userimage = styled.img`
     width: 5vw;
     height: auto;
-    margin-right: 1vw;
+    margin-right: 2vw;
 `;
 
 const Bigcard = styled.div`
@@ -69,11 +69,11 @@ const DetailP = styled.p`
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    margin: 10px 0;
+    margin: 0.5vw 0;
 `;
 
 const Nump = styled.p`
-    margin: 10px 2vw 10px 0;
+    margin: 0.5vw 2vw 0.5vw 0;
     white-space: nowrap
 `;
 
