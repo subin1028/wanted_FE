@@ -15,9 +15,9 @@ const instance = axios.create({
     auth: `Bearer ${APIKEY}` //제출 시 제거
 });
 
-export const callApi = async() => {
+export const callApi = async(page) => {
     try{
-      const response = await instance.get(`${queryParam.organ}/${queryParam.repo}/issues?sort=${queryParam.sort}`);
+      const response = await instance.get(`${queryParam.organ}/${queryParam.repo}/issues?sort=${queryParam.sort}&page=${page}`);
       return await(response).data?[response.data] : [];
     }catch(e){
       console.log("error >> ", e)
