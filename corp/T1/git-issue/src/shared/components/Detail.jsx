@@ -21,6 +21,7 @@ const Detail = (props) => {
                     writer={item.user.login}
                     iss_date={item.created_at}
                     num_coment={item.comments}
+                    user_src={item.user.avatar_url}
                     ></Card>
                 <div id='div-list'>
                     {item.body}
@@ -29,6 +30,7 @@ const Detail = (props) => {
         </>
     )
 }
+
 
 const Outerdetail = styled.div`
     padding-top: 8vh;

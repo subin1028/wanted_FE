@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
 //이슈번호, 이슈제목, 작성자, 작성일, 코멘트수
-const Card = ({iss_num, iss_title, writer, iss_date, num_coment}) => {
+const Card = ({iss_num, iss_title, writer, iss_date, num_coment,user_src}) => {
     return(
-        <>
+            <>
             <Bigcard>
+                {/* user_src를 넣지 않았을 때 image 태그가 안 생기는데 왜 이게 되는건가요..? */}
+                <Userimage src={user_src}></Userimage> 
                 <Columninner>
                     <Detailinner>
                         <Nump>#{iss_num}</Nump>
@@ -17,8 +19,10 @@ const Card = ({iss_num, iss_title, writer, iss_date, num_coment}) => {
                 </Columninner>
                 <CommnetBox>코멘트: {num_coment}</CommnetBox>
             </Bigcard>
-        </>
-    )
+            </>
+            
+        
+    );
 
 };
 
@@ -32,6 +36,12 @@ function DateFormatter(origin_date){
     const format_date = `${year}년 ${month}월 ${day}일`;
     return format_date;
 };
+
+const Userimage = styled.img`
+    width: 5vw;
+    height: auto;
+    margin-right: 1vw;
+`;
 
 const Bigcard = styled.div`
     display:flex;
@@ -59,10 +69,11 @@ const DetailP = styled.p`
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+    margin: 10px 0;
 `;
 
 const Nump = styled.p`
-    margin-right: 2vw;
+    margin: 10px 2vw 10px 0;
     white-space: nowrap
 `;
 
