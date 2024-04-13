@@ -2,28 +2,40 @@ import styled from 'styled-components';
 
 //이슈번호, 이슈제목, 작성자, 작성일, 코멘트수
 const Card = ({iss_num, iss_title, writer, iss_date, num_coment,user_src}) => {
-    return(
-            <>
-            <Bigcard>
-                {/* user_src를 넣지 않았을 때 image 태그가 안 생기는데 왜 이게 되는건가요..? */}
-                <Userimage src={user_src}></Userimage> 
-                <Columninner>
-                    <Detailinner>
-                        <Nump>#{iss_num}</Nump>
-                        <DetailP>{iss_title}</DetailP>
-                    </Detailinner>
-                    <Detailinner>
-                        <Nump>작성자: {writer} </Nump>
-                        <DetailP>작성일: {DateFormatter(iss_date)}</DetailP>
-                    </Detailinner>
-                </Columninner>
-                <CommnetBox>코멘트: {num_coment}</CommnetBox>
-            </Bigcard>
-            </>
-            
-        
+    return (
+        <>
+            {user_src ? (
+                <Bigcard>
+                    <Userimage src={user_src} />
+                    <Columninner>
+                        <Detailinner>
+                            <Nump>#{iss_num}</Nump>
+                            <DetailP>{iss_title}</DetailP>
+                        </Detailinner>
+                        <Detailinner>
+                            <Nump>작성자: {writer}</Nump>
+                            <DetailP>작성일: {DateFormatter(iss_date)}</DetailP>
+                        </Detailinner>
+                    </Columninner>
+                    <CommnetBox>코멘트: {num_coment}</CommnetBox>
+                </Bigcard>
+            ) : (
+                <Bigcard>
+                    <Columninner>
+                        <Detailinner>
+                            <Nump>#{iss_num}</Nump>
+                            <DetailP>{iss_title}</DetailP>
+                        </Detailinner>
+                        <Detailinner>
+                            <Nump>작성자: {writer}</Nump>
+                            <DetailP>작성일: {DateFormatter(iss_date)}</DetailP>
+                        </Detailinner>
+                    </Columninner>
+                    <CommnetBox>코멘트: {num_coment}</CommnetBox>
+                </Bigcard>
+            )}
+        </>
     );
-
 };
 
 function DateFormatter(origin_date){
@@ -38,9 +50,8 @@ function DateFormatter(origin_date){
 };
 
 const Userimage = styled.img`
-    width: 5vw;
+    width: 5vmax;
     height: auto;
-    margin-right: 2vw;
 `;
 
 const Bigcard = styled.div`
@@ -56,7 +67,7 @@ const Columninner = styled.div`
     flex-direction: column;
     width: 73%;
     font-size: 1.4vmax;
-    margin: auto 0;
+    margin: auto 0 auto 2vw;
 `;
 
 const Detailinner = styled.div`
@@ -69,11 +80,11 @@ const DetailP = styled.p`
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    margin: 0.5vw 0;
+    margin: 0.5vh 0;
 `;
 
 const Nump = styled.p`
-    margin: 0.5vw 2vw 0.5vw 0;
+    margin: 0.5vh 2vw 0.5vh 0;
     white-space: nowrap
 `;
 
