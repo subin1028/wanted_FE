@@ -6,7 +6,6 @@ import Headers from "./Headers";
 import Card from "./Card";
 
 const Detail = (props) => {
-    const navigate = useNavigate();
     const detail = useContext(userContext);
     const prop = useParams();
     const item = detail[0][prop.id.slice(1)];
@@ -23,9 +22,9 @@ const Detail = (props) => {
                     num_coment={item.comments}
                     user_src={item.user.avatar_url}
                     ></Card>
-                <div id='div-list'>
+                <Innerdetail>
                     {item.body}
-                </div>
+                </Innerdetail>
             </Outerdetail>
         </>
     )
@@ -38,6 +37,12 @@ const Outerdetail = styled.div`
     flex-direction: column;
     width: 90vw;
     margin: auto;
+`;
+
+const Innerdetail = styled.div`
+    width: 80vw;
+    margin: 2vh auto;
+    font-size: 2vmin;
 `;
 
 export default Detail;
