@@ -12,7 +12,7 @@ const Card = ({iss_num, iss_title, writer, iss_date, num_coment}) => {
                     </Detailinner>
                     <Detailinner>
                         <Nump>작성자: {writer} </Nump>
-                        <DetailP>작성일: {iss_date}</DetailP>
+                        <DetailP>작성일: {DateFormatter(iss_date)}</DetailP>
                     </Detailinner>
                 </Columninner>
                 <CommnetBox>코멘트: {num_coment}</CommnetBox>
@@ -20,6 +20,17 @@ const Card = ({iss_num, iss_title, writer, iss_date, num_coment}) => {
         </>
     )
 
+};
+
+function DateFormatter(origin_date){
+    const date = new Date(origin_date);
+
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+
+    const format_date = `${year}년 ${month}월 ${day}일`;
+    return format_date;
 };
 
 const Bigcard = styled.div`
