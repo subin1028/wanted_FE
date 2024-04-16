@@ -1,7 +1,7 @@
 import axios from "axios";
-import apiKey from "../../corp_api.json"; 
+// import apiKey from "../../corp_api.json"; 
 
-const APIKEY = apiKey.authorization;
+// const APIKEY = apiKey.authorization;
 
 export const queryParam = {
     "sort": "comments",
@@ -12,7 +12,7 @@ export const queryParam = {
 const instance = axios.create({
     baseURL: "https://api.github.com/repos",
     headers: {"Content-Type": "application/vnd.github.text+json"},
-    auth: `Bearer ${APIKEY}` //제출 시 제거
+    // auth: `Bearer ${APIKEY}` //제출 시 제거
 });
 
 export const callApi = async(page) => {
