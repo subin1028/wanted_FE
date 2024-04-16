@@ -1,9 +1,10 @@
 import React, {useContext} from "react";
 import { userContext } from "../context/context";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import Headers from "./Headers";
 import Card from "./Card";
+import ReactMarkdown from "react-markdown";
 
 const Detail = (props) => {
     const detail = useContext(userContext);
@@ -23,7 +24,7 @@ const Detail = (props) => {
                     user_src={item.user.avatar_url}
                     ></Card>
                 <Innerdetail>
-                    {item.body}
+                    <ReactMarkdown>{item.body}</ReactMarkdown>
                 </Innerdetail>
             </Outerdetail>
         </>
