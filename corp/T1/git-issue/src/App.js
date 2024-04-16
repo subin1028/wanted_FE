@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import { DataContext } from './shared/context/context';
 import { RouterProvider } from 'react-router-dom';
 import router from "./shared/router/router";

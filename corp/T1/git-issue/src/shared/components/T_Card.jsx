@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import { userContext } from "../context/context";
-import {RouterProvider, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 import Card from "./Card";
 import Headers from "./Headers";
 import styled from "styled-components";
