@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import {NumericFormat, numericFormatter, removeNumericFormat} from "react-number-format";
+import {NumericFormat} from "react-number-format";
 import { callApi } from "../network/callEC";
 import { useDispatch, useSelector } from "react-redux";
 import { setInput, addExchange } from "../store/redux_slice";
