@@ -4,8 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import fullDate from "../components/GetDate";
 
 const APIKey = exchangeApi.exchangeApi;
-// const dispatch = useDispatch();
-// const change = useSelector((state) => state.redux_slice.change);
 
 const instance = axios.create({
     baseURL: "https://api.apilayer.com/exchangerates_data",
