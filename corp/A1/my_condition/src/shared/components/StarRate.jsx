@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import styled from 'styled-components';
 import Star from './Star';
 
-export const StarRate = (props) => {
-    const [rate, setRate] = useState(0);
+export const StarRate = ({rate, setRate}) => { //detail 화면 별 그리기
+
     const [mouseOverRate, setMouseOverRate] = useState(0);
 
   return (
@@ -20,7 +20,7 @@ export const StarRate = (props) => {
   )
 };
 
-export const StarMain = (props) => {
+export const StarMain = (props) => { //메인 화면 별 그리기
   return (
     <>
         <StarBox>
@@ -35,6 +35,8 @@ export const StarMain = (props) => {
 const StarBox = styled.div`
     display: flex;
     align-items: center;
+    margin: auto;
+    justify-content: center;
 `;
 
 
