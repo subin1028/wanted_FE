@@ -5,6 +5,16 @@ import Star from './Star';
 export const StarRate = ({rate, setRate}) => { //detail 화면 별 그리기
 
     const [mouseOverRate, setMouseOverRate] = useState(0);
+    const handleKeyDown = (event) => {
+        // 입력된 키가 숫자인지 확인
+        console.log(event.key);
+        if (event.key >= '0' && event.key <= '9') {
+            setRate(event.key);
+            
+        }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
 
   return (
     <>
