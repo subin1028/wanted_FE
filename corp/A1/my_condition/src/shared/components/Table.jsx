@@ -17,7 +17,6 @@ const Table = () => {
         addDays();
         const fetchData = async () => {
             const response = await getInfo(); 
-            console.log(response.data); 
             setTable(response.data);
             dispatch(addRating(response.data.slice(-7)));
         };
@@ -27,14 +26,7 @@ const Table = () => {
 
   return (
     <>
-        <h2>일주일 컨디션</h2>
-        {/* {table && table.map((item, idx) => (
-            <MainBlock key={idx}>
-                <p>{item.date}</p>
-                {item.rate? (<StarMain rate={item.rate}/>):(<p>-</p>)}
-                <button>수정</button>
-            </MainBlock>
-        ))} */}
+        <CenterH3>일주일 컨디션</CenterH3>
 
         <TableContainer>
             <tbody>
@@ -42,7 +34,7 @@ const Table = () => {
                     <TableRow key={item.id}>
                         <TableCell>{daysOfWeek[makeDay(item.date)]}</TableCell>
                         <TableCell>{item.rate ? <StarMain rate={item.rate} /> : '-'}</TableCell>
-                        <TableCell><Link to={`/detail/:${item.id}/:${makeDay(item.date)}`}><div>수정</div></Link></TableCell>
+                        <TableCell><Link style={{textDecoration: "none"}} to={`/detail/:${item.id}/:${makeDay(item.date)}`}><Editbtn>수정</Editbtn></Link></TableCell>
                     </TableRow>
                 ))}
             </tbody>
@@ -52,9 +44,9 @@ const Table = () => {
   )
 }
 
-const MainBlock = styled.div`
-    display:flex;
-    flex-direction: row;
+const CenterH3 = styled.h3`
+    text-align: center;
+    margin-bottom: 5vh;
 `;
 
 const TableContainer = styled.table`
@@ -78,5 +70,13 @@ const TableCell = styled.td`
     text-align: center;
     justify-content: center;
 `;
+
+const Editbtn = styled.div`
+    background-color: #ffe595;
+    border-radius: 5px;
+    color: black;
+    height: 3vh;
+    line-height: 3vh;
+`
 
 export default Table

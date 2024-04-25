@@ -21,7 +21,6 @@ const postInfo = async (data) => {
             },
             data: data,
         });
-        console.log("Post successful:", response.data);
         return response.data;
     } catch (error) {
         console.error("Error posting data:", error);
@@ -37,8 +36,7 @@ export const updateData = async (id, newRate) => {
 
     axios.patch(url, data)
     .then(response => {
-        console.log('Object updated successfully:', response.data);
-        // 서버로부터의 응답을 처리합니다.
+
     })
     .catch(error => {
         console.error('There was a problem with your axios request:', error);
