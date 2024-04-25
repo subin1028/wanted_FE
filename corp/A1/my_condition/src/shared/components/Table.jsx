@@ -17,7 +17,6 @@ const Table = () => {
         addDays();
         const fetchData = async () => {
             const response = await getInfo(); 
-            console.log(response.data); 
             setTable(response.data);
             dispatch(addRating(response.data.slice(-7)));
         };
